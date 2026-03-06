@@ -58,3 +58,4 @@ def plot_fit(x, y, model_func, beta):
     plt.ylabel("ln(Current)")
     plt.legend()
     plt.show()
+
