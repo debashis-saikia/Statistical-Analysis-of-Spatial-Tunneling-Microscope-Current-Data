@@ -1,0 +1,5 @@
+plt.plot(samples[:200, 0], color='red', label='Burn-in region')
+plt.plot(samples[200:, 0], color='black', alpha=0.5, label='Post burn-in')
+plt.legend()
+plt.title("Burn-in Visualization")
+plt.show()
