@@ -9,30 +9,25 @@ def plot_fit_2d_poisson(x, y, z, model, grid_size=100):
 
     X_grid, Y_grid = np.meshgrid(x_lin, y_lin)
 
-    # flatten → predict → reshape
     Z_pred = model.predict(X_grid.ravel(), Y_grid.ravel())
     Z_pred = Z_pred.reshape(X_grid.shape)
 
     fig = plt.figure(figsize=(12, 5))
 
-    # --- observed ---
     ax1 = fig.add_subplot(121, projection='3d')
     ax1.scatter(x, y, z, alpha=0.1)
     ax1.set_title("Observed Data")
 
-    # --- fitted surface ---
     ax2 = fig.add_subplot(122, projection='3d')
 
     surf = ax2.plot_surface(
         X_grid,
         Y_grid,
         Z_pred,
-        cmap='viridis',     # 🔥 THIS is the key line
-        edgecolor='none',   # smoother surface
+        cmap='viridis',     
         antialiased=True
     )
 
-    # add color bar (very useful)
     ax2.set_title("Poisson Fit (λ)")
     ax2.set_xlabel("x")
     ax2.set_ylabel("y")
