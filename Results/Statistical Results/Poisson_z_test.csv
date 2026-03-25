@@ -1,4 +1,4 @@
-Degree,Parameter,t_value,p_value,Significant,CI_width
+Degree,Parameter,t_value,p_value,Significant,Avg_CI_width
 1,beta_0,521.5799,0.0000e+00,Yes,0.3992
 1,beta_1,-0.0088,9.9295e-01,No,0.3992
 1,beta_2,0.0113,9.9101e-01,No,0.3992
