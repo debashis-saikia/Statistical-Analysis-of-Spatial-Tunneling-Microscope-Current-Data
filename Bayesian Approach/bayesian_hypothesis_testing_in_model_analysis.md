@@ -47,17 +47,11 @@ For each polynomial degree and noise model, we examine:
 - Nearly circular distribution  
 - Minimal parameter correlations  
 
-**Interpretation**  
-The parameters are well constrained and stable.
-
 ### Posterior Distribution
 
 - Gaussian-shaped distributions  
 - Narrow credible intervals  
 - No multi-modal structure  
-
-**Interpretation**  
-Degree 1 model provides stable parameter estimation.
 
 ### Conclusion (Gaussian Degree 1)
 
@@ -81,9 +75,6 @@ Degree 1 model provides stable parameter estimation.
 - Slightly broader distributions  
 - Small correlations appear  
 
-**Interpretation**  
-The model becomes slightly more complex without significant improvement.
-
 ### Conclusion (Gaussian Degree 2)
 
 - Acceptable model  
@@ -104,9 +95,6 @@ The model becomes slightly more complex without significant improvement.
 - Wider posterior distributions  
 - Strong parameter correlations  
 
-**Interpretation**  
-Higher-degree model introduces unnecessary parameters.
-
 ### Conclusion (Gaussian Degree 3)
 
 - Overfitting behavior observed  
@@ -115,13 +103,38 @@ Higher-degree model introduces unnecessary parameters.
 
 ---
 
+## Degree 4
+
+### Scatter Plot
+
+- Very large spread  
+- Strong parameter degeneracy  
+- Multiple parameter correlations  
+
+### Posterior Distribution
+
+- Very wide posterior distributions  
+- Strong parameter correlations  
+- Increased uncertainty  
+
+### Conclusion (Gaussian Degree 4)
+
+- Strong overfitting behavior  
+- Increased uncertainty  
+- Model becomes unreliable  
+
+**Degree 4 is rejected**
+
+---
+
 # Gaussian Model Summary
 
-| Degree | Stability | Complexity | Conclusion |
-|--------|-----------|------------|------------|
-| Degree 1 | High | Low | Best |
-| Degree 2 | Moderate | Moderate | Acceptable |
-| Degree 3 | Low | High | Overfitting |
+| Degree   | Stability | Complexity | Conclusion  |
+|----------|-----------|------------|-------------|
+| Degree 1 | High      | Low        | Best        |
+| Degree 2 | Moderate  | Moderate   | Acceptable  |
+| Degree 3 | Low       | High       | Overfitting |
+| Degree 4 | Low       | High       | Overfitting |
 
 ---
 
@@ -175,7 +188,6 @@ Higher-degree model introduces unnecessary parameters.
 
 - Acceptable model  
 - Slight increase in uncertainty  
-- No strong improvement  
 
 ---
 
@@ -207,13 +219,43 @@ Higher-degree model introduces unnecessary parameters.
 
 ---
 
+## Degree 4
+
+### Scatter Plot
+
+- Strong multi-modal behavior  
+- Large parameter degeneracy  
+
+### Trace Plot
+
+- Strong drift  
+- Poor convergence  
+- Unstable chains  
+
+### Posterior Distribution
+
+- Multi-modal distributions  
+- Strong parameter correlations  
+- Very large uncertainty  
+
+### Conclusion (Poisson Degree 4)
+
+- Strong overfitting  
+- Poor convergence  
+- Unstable parameters  
+
+**Degree 4 is rejected**
+
+---
+
 # Poisson Model Summary
 
-| Degree | Stability | Convergence | Conclusion |
-|--------|-----------|-------------|------------|
-| Degree 1 | High | Good | Best |
-| Degree 2 | Moderate | Good | Acceptable |
-| Degree 3 | Low | Poor | Rejected |
+| Degree   | Stability | Convergence | Conclusion |
+|----------|-----------|-------------|------------|
+| Degree 1 | High      | Good        | Best       |
+| Degree 2 | Moderate  | Good        | Acceptable |
+| Degree 3 | Low       | Poor        | Rejected   |
+| Degree 4 | Low       | Poor        | Rejected   |
 
 ---
 
@@ -252,8 +294,7 @@ The Bayes factor of **16.4** implies:
 Key Observations:
 
 - Both Gaussian and Poisson models favor **lower-degree polynomials**
-- Higher-degree models introduce **parameter degeneracy**
-- Degree 3 models show **overfitting behavior**
+- Degree 3 and 4 models show **overfitting behavior**
 - Degree 1 models show **stable parameter estimation**
 - Bayes factor supports the preferred noise model
 
